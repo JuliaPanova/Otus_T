@@ -2,7 +2,8 @@ from Task_2.ship import Ship
 from Task_2.plane import Plane
 from Task_2.bus import Bus, PickUpError, NegPassError
 from Task_2.truck import Truck, LoadError, NegCargoError
-from Task_2.transport import Engine, FuelError, TankError, TankUpError
+from Task_2.transport import Engine
+from Task_2.transport_exceptions import FuelError, TankError, TankUpError
 
 
 def try_tank_up(transport, amount):

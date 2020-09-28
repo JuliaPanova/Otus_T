@@ -1,5 +1,6 @@
 from abc import ABCMeta, abstractmethod
 from dataclasses import dataclass
+from Task_2.transport_exceptions import WeightError, FuelError, TankError, TankUpError
 
 
 class Transport(metaclass=ABCMeta):
@@ -9,9 +10,13 @@ class Transport(metaclass=ABCMeta):
     @abstractmethod
     def move(self):
         """This function shows the type of movement"""
-        pass
+        raise NotImplementedError
 
     @abstractmethod
+    def stop_engine(self):
+        """This function stops the engine"""
+        raise NotImplementedError
+
     def tank_up(self, amount):
         """This function is used to fuel up the transport"""
         if amount <= 0:
@@ -21,17 +26,11 @@ class Transport(metaclass=ABCMeta):
         self.fuel += amount
         print("The {} has been fueled up.".format(self.__class__.__name__.lower()))
 
-    @abstractmethod
     def start_engine(self):
         """This function starts the engine"""
         if self.fuel == 0:
             raise FuelError(self.fuel)
         print("Starting the engine...")
-
-    @abstractmethod
-    def stop_engine(self):
-        """This function stops the engine"""
-        pass
 
     @property
     def weight(self):
@@ -70,40 +69,6 @@ class Transport(metaclass=ABCMeta):
         if val <= 0:
             raise TankError()
         self.__tank_volume = val
-
-
-class WeightError(ValueError):
-    """
-    Error in case weight <=0
-    """
-    def __init__(self):
-        super().__init__("Weight cannot be zero or less than zero!")
-
-
-class FuelError(ValueError):
-    """
-     Error in case fuel <=0
-    """
-    def __init__(self, amount):
-        super().__init__("Fuel cannot be zero or less than zero ({} litres).".format(amount))
-
-
-class TankError(ValueError):
-    """
-     Error in case the tank volume <=0
-    """
-    def __init__(self):
-        super().__init__("The tank volume cannot be zero or less than zero!")
-
-
-class TankUpError(ValueError):
-    """
-     Error in case the tank volume is not enough to fuel up the transport
-    """
-    def __init__(self, tank_volume, fuel, amount):
-        super().__init__("""The maximum tank volume of {} litres exceeded. The current amount of fuel is {} litres.
-It is not possible to fuel {} more litres.""".format(tank_volume, fuel, amount))
-
 
 @dataclass
 class Engine:

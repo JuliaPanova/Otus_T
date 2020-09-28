@@ -1,4 +1,5 @@
-from Task_2.transport import Transport, FuelError
+from Task_2.transport import Transport
+from Task_2.transport_exceptions import FuelError
 
 
 class Plane(Transport):
