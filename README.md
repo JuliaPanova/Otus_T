@@ -13,3 +13,5 @@ This task includes different classes to model the following transportation means
 - planes;
 - vehicles, including buses and trucks
 
+## Task 3
+This task includes reading data from a public API asynchronously and writing them to a database.
