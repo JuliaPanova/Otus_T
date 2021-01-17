@@ -1,0 +1,49 @@
+.error {
+font-family: Georgia, serif;
+font-size: 25px;
+letter-spacing: 1.4px;
+word-spacing: 2px;
+color: #FF4C31;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+
+.welcome {
+font-family: Georgia, serif;
+font-size: 32px;
+letter-spacing: 1.4px;
+word-spacing: 2px;
+color: #004C31;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+
+p {
+font-family: Georgia, serif;
+font-size: 16px;
+letter-spacing: 1.2px;
+word-spacing: 2px;
+color: #554CFF;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
