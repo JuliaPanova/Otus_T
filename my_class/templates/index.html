@@ -7,10 +7,10 @@
 {% block body %}
     <form action="/contact/" method="post">
         <p class="welcome">Welcome to Class booking page!</p>
-        <p><b>Choose your preferred time</b></p>
-    <p><input name="time" type="radio" value="0"> Morning</p>
+        <p><b>Choose your preferred time:</b></p>
+    <p><input name="time" type="radio" value="0" checked> Morning</p>
     <p><input name="time" type="radio" value="1"> Daytime</p>
-    <p><input name="time" type="radio" value="2" checked> Evening</p>
+    <p><input name="time" type="radio" value="2"> Evening</p>
     <p><input type="submit" value="Contact us"></p>
   </form>
 {% endblock %}
