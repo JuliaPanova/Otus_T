@@ -25,6 +25,32 @@ font-variant: normal;
 text-transform: none;
 }
 
+h1 {
+font-family: Georgia, serif;
+font-size: 24px;
+letter-spacing: 1.4px;
+word-spacing: 2px;
+color: #004C31;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+p.h2 {
+font-family: Georgia, serif;
+font-size: 20px;
+letter-spacing: 1.4px;
+word-spacing: 2px;
+color: #004C31;
+font-weight: bold;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
 
 p {
 font-family: Georgia, serif;
@@ -32,6 +58,33 @@ font-size: 16px;
 letter-spacing: 1.2px;
 word-spacing: 2px;
 color: #554CFF;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+
+th {
+font-family: Georgia, serif;
+font-size: 20px;
+letter-spacing: 1.2px;
+word-spacing: 2px;
+color: #554CFF;
+text-decoration: none;
+font-style: normal;
+font-weight: bold;
+font-variant: normal;
+text-transform: none;
+}
+
+.contact-item {
+font-family: Georgia, serif;
+font-size: 16px;
+letter-spacing: 1.2px;
+word-spacing: 2px;
+color: #AAAAFF;
 font-weight: normal;
 text-decoration: none;
 font-style: normal;

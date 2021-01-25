@@ -5,12 +5,35 @@
 {% endblock %}
 
 {% block body %}
+
+  <p class="welcome">Welcome to Class booking page!</p>
+        <p class="h2">Book a class</p>
+        <hr/>
+    <p><b>Choose your preferred date and time:</b></p>
+
+
     <form action="/contact/" method="post">
-        <p class="welcome">Welcome to Class booking page!</p>
-        <p><b>Choose your preferred time:</b></p>
+
+
     <p><input name="time" type="radio" value="0" checked> Morning</p>
     <p><input name="time" type="radio" value="1"> Daytime</p>
     <p><input name="time" type="radio" value="2"> Evening</p>
-    <p><input type="submit" value="Contact us"></p>
+    <p><input type="submit" value="BOOK"></p>
+          </form>
+
+
+        <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        <p class="h2">View my bookings</p>
+        <hr/>
+    <form action="/list" method="post">
+    <p><input name="phone" type="text" value="+7"></p>
+    <p><input type="submit" value="VIEW"></p>
+
   </form>
+
+
+
+
 {% endblock %}

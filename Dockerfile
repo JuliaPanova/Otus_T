@@ -10,7 +10,7 @@ RUN poetry install --no-interaction --no-ansi
 
 COPY my_class .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["python", "main.py"]
 

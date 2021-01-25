@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title -%}
+  Contacts
+{%- endblock %}
+
+{% block body %}
+  <h1>Bookings</h1>
+  <div>
+    <div>
+      <table>
+          <tr>
+              <th>name</th>
+            <th>phone</th>
+              <th>date</th>
+            <th>team</th>
+          </tr>
+
+        {% for contact in contacts %}
+          <tr class="contact-item">
+              <td>{{ contact.name }}</td>
+              <td>{{ '+' + contact.phone[0] + ' (' + contact.phone[1:4] + ') ' + contact.phone[4:7] + '-' + contact.phone[7:9] + '-' + contact.phone[9:11]}}</td>
+              <td>{{ contact.date }}</td>
+              <td>{{ teams[contact.team_id] }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock %}
+

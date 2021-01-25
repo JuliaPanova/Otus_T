@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+<html>
+<head>
 
 {% block title %}
   Hello
@@ -6,12 +8,24 @@
 
 {% block body %}
 
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+</head>
+
 <form action="/" method="POST">
     <p class="error">{{ error }}</p>
     <p>Fill in the form and our {{ team }} team will contact you soon:</p>
+        <p>Date:<br> <input type="text" name="date" id="datepicker"></p>
     <p><input type="hidden" name="time" value="{{ time }}"></p>
-    <p><input type="text" name="name" value="{{name}}"></p>
-    <p><input type="text" name="phone" value="{{ '+7' if not phone else phone }}"></p>
+    <p>Name:<br> <input type="text" name="name" value="{{name}}"></p>
+    <p>Phone:<br> <input type="text" name="phone" value="{{ '+7' if not phone else phone }}"></p>
     <p><input type="submit" value="Submit"></p>
   </form>
 
