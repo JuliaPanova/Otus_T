@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+
+</head>
+<body>
+    <h1>Welcome, {{student.name}}!</h1>
+    <h2>Book a lesson</h2>
+<form action="/book/" method="POST">
+    {% csrf_token %}
+    <p class="error">{{ error }}</p>
+    <p>Date:<br> <input type="text" name="date" id="datepicker">&nbsp;&nbsp;
+
+    </p>
+    <input type="hidden" name="student_id" value="{{student.id}}">
+    <p>Teacher:<br>
+        <select>
+       {% for teacher in teachers %}
+        <option value="{{teacher.id}}">
+            {{ teacher.name }}
+        </option>
+        {% endfor %}
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="Book">
+    </p>
+</form>
+
+    <h2>Recent lessons</h2>
+    <ul>
+        {% for lesson in lessons %}
+        <li>
+            {{ lesson.date_time }} &nbsp;&nbsp; {{lesson.teacher.name}})
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
