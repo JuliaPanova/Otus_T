@@ -2,3 +2,4 @@
 venv/
 *.pyc
 Task_4/database.csv
+my_class_dj/db.sqlite3
