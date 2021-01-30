@@ -26,7 +26,7 @@
     </p>
     <input type="hidden" name="student_id" value="{{student.id}}">
     <p>Teacher:<br>
-        <select>
+        <select name="teacher_id">
        {% for teacher in teachers %}
         <option value="{{teacher.id}}">
             {{ teacher.name }}
@@ -39,11 +39,11 @@
     </p>
 </form>
 
-    <h2>Recent lessons</h2>
+    <h2>Your lessons</h2>
     <ul>
         {% for lesson in lessons %}
         <li>
-            {{ lesson.date_time }} &nbsp;&nbsp; {{lesson.teacher.name}})
+            {{ lesson.date_time|date:"m/d/Y" }} &nbsp;&nbsp; {{lesson.teacher.name}}
         </li>
         {% endfor %}
     </ul>

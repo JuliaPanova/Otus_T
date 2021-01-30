@@ -6,6 +6,5 @@ app_name = 'my_class_app'
 
 urlpatterns = [
     path('', index_view, name='index'),
-    # path('student/', student_view, name='student')
 
 ]
