@@ -1,8 +1,19 @@
 from django.shortcuts import render, redirect
 from .models import Student, Teacher, Lesson
-from .forms import SignUpForm 
+from .forms import SignUpForm , BookLessonForm
 from django.contrib.auth import login, authenticate
 from datetime import datetime
+from django.views.generic import ListView, DetailView
+
+
+class TeacherListView(ListView):
+    model = Teacher
+    template_name = 'my_class_app/teachers.html'
+
+
+class TeacherDetailView(DetailView):
+    model = Teacher
+    template_name = 'my_class_app/teacher.html'
 
 
 def index_view(request):
@@ -49,5 +60,6 @@ def student_view(request):
     student = Student.objects.get(user=request.user)
     teachers = Teacher.objects.all()
     lessons = Lesson.objects.filter(student=student)
-    return render(request, 'my_class_app/student.html', {'student': student, 'teachers': teachers, 'lessons':lessons})
+
+    return render(request, 'my_class_app/student.html', {'student': student, 'teachers': teachers, 'lessons':lessons, 'form': BookLessonForm()})
 

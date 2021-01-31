@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 from .settings_local import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,6 +94,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 
 LOGIN_REDIRECT_URL = '/student'

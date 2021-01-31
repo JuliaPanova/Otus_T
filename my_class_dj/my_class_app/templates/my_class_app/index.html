@@ -1,18 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
 
 </head>
 <body>
     <h1>Welcome to my site!</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/teachers/">Our teachers<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <a href="signin" >I am a registered student</a> &nbsp; <a href="signup" >I am a new student</a>
+    <a class="btn btn-outline-secondary" href="signin" >I am a registered student</a>
+    <a class="btn btn-outline-secondary"  href="signup" >I am a new student</a>
 
 </body>
 </html>
