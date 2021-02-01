@@ -10,7 +10,11 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
-
+    
+    def lesson_count(self):
+        result = Lesson.objects.filter(student=self).count()
+        return result
+    
 
 class Teacher(models.Model):
     name = models.CharField(max_length=64)

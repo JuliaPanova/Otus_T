@@ -4,7 +4,7 @@ from .forms import SignUpForm , BookLessonForm
 from django.contrib.auth import login, authenticate
 from datetime import datetime
 from django.views.generic import ListView, DetailView
-
+from django.core.exceptions import PermissionDenied
 
 class TeacherListView(ListView):
     model = Teacher
