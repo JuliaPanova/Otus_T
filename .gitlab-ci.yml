@@ -45,4 +45,5 @@ test:
 #  variables:
 #    DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
+    - python manage.py migrate
     - python manage.py test --settings my_class_dj.settings
